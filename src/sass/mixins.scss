@@ -1,0 +1,57 @@
+@use "sass:math";
+
+// extracted from https://fribly.com/2019/02/06/pure-css-smoke-effect-purple-haze/
+
+@mixin smoke($classNum) {
+
+   .h-#{$classNum} {
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+      position: absolute;
+      left: if($classNum ==1, auto, 0);
+      right: if($classNum ==1, 0, auto);
+      margin: auto;
+      top: 50%;
+      transform: translate(0, -100%) scaleX(if($classNum==1, 1, -1)) rotate(45deg);
+
+
+      .c-#{$classNum} {
+         border: 2px solid rgba(255, 255, 255, .1);
+         border-radius: 400px;
+         position: absolute;
+         margin: auto;
+
+         @for $i from 1 through 60 {
+            &:nth-of-type(#{$i}) {
+               $blurring: blur(math.div($i, 3) + 8px);
+               $temp: math.div($i, 40);
+               box-shadow: 3px 0px rgba(255, 255, 255, - $temp), 6px -5px rgba(10, 0, 0, - $temp);
+               width: ($i * 6) + 0px;
+               height: ($i * 1) + 0px;
+               right: ($i * 10) + 0px;
+               bottom: ($i * 10) + 0px;
+               //  -webkit-filter:blur(math.div($i,3) + 8px);
+               -webkit-filter: $blurring;
+               -moz-filter: $blurring;
+               -o-filter: $blurring;
+               -ms-filter: $blurring;
+               // filter: url(#blur);
+               transform-origin: ($i * 4) + 0px ($i * 2) + 0px;
+               animation: spin 3s math.div($i, 10) + if($classNum ==1, 0, 1) + 0s linear infinite;
+               background: rgba(90 + ($i*3), 33 + ($i*1), 205, 1 - math.div($i, 80));
+            }
+         }
+      }
+   }
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg)
+   }
+
+   100% {
+      transform: rotate(360deg)
+   }
+}
