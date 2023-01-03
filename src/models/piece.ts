@@ -111,7 +111,6 @@ export function handleKeyPressed(key: KeyStroke) {
          break;
 
       case 'HardDrop':
-         // const projectedRow = getProjectedRow(col, row, currPiece, frame, landedRows);
          const rowsToMove = derived.projectedRow - row;
          state.row = derived.projectedRow;
          //fire event

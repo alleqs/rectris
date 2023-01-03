@@ -47,6 +47,3 @@ export const PausedModal: FC<Props> = ({ onNewGame, onResume, modalRef }) => {
 };
 
 
-//🗘
-
-//#FF4500

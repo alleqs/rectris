@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     fontFamily: {
       mono: ['Electrolize', '"Jetbrains Mono"', ...defaultTheme.fontFamily.mono],
-      retroGame: ["PressStart2P", "mono"],
+      retroGame: ["PressStart2P", ...defaultTheme.fontFamily.mono],
     },
     extend: {},
   },

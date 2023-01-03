@@ -12,12 +12,10 @@ export const PreGame: FC<Props> = ({ onStart, modalRef: selfModalRef, helpModalR
 
    function handleStart() {
       onStart();
-      console.log('onstart')
       selfModalRef.current?.close();
    }
 
    function handleHelpClick() {
-      // console.log('opa opa')
       selfModalRef.current?.close();
       helpModalRef.current?.showModal();
    }

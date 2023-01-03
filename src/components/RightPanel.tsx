@@ -59,9 +59,7 @@ export const RightPanel: FC<Props> = ({ onPause, onResume, onNewGame }) => {
          <div className='flex-1 space-y-3'>
             <h2 className="text-3xl text-center text-gray-500 font-retroGame">Next</h2>
             <svg viewBox={`0 0 5 8`} width={WIDTH * 0.5} height={WIDTH * 0.8}
-               // className='bg-[#FFFF0010] backdrop-blur-md border-solid border-2 border-[#703ACF] rounded-lg'>
                className='bg-[#FFFF0010] backdrop-blur-md rounded-lg shadow[0_-5px_-5px_10px_#d5cc39] neumorphism-right'>
-               {/* -5px -5px 10px #d5cc39, 5px 5px 10px #ffff4f */}
                {freezed
                   ? prevState.map((nextPiece, j) =>
                      <motion.g key={j} animate={{ y: -2.5 }} transition={{ ease: "backOut" }}>

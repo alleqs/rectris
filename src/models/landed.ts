@@ -36,7 +36,6 @@ export function handleTickCur(onDownMove: () => void) {
 
             //game over
             if (row <= HIDDEN_ROWS) {
-               console.log('game over');
                state.landedOnInvisibleRow = Symbol('true');
             }
 

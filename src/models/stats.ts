@@ -38,7 +38,6 @@ export const derived = derive({
    get combo() { return (get: DeriGet) => state.consecutiveDrops * 50 * this.level(get) }
 });
 
-console.log('landedOnInvisibleRow')
 subscribeKey(landedState, 'landedOnInvisibleRow', ({ description: endOfGame }) => {
    if (endOfGame) {
       for (let i = state.rank.length - 1; i >= 0; i--) {
@@ -52,7 +51,6 @@ subscribeKey(landedState, 'landedOnInvisibleRow', ({ description: endOfGame }) =
          state.rank.splice(state._pos, 0, ['', state.score]);
          state.rank.pop();
       }
-      console.log('state._pos', state._pos)
       state.newHiScore = Symbol(state._pos !== FAKE_POS ? 'true' : 'false');
    }
 });
@@ -68,7 +66,6 @@ export function handleNewHiScore(name: string) {
 subscribeKey(landedState, 'pieceLanded', ({ description: strDroppedRows }) => {
    if (strDroppedRows) {
       const droppedRows = +strDroppedRows;
-      // console.log('droppedRows', droppedRows)
       if (droppedRows === 0) {
          state.consecutiveDrops = 0;
       }

@@ -21,12 +21,10 @@ export const NewHiScoreModal: FC<Props> = ({ modalRef, onNewHiScore }) => {
    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
       setName(e.currentTarget.value.slice(0, 10));
    }
-   //backdrop-brightness-50 bg-white/30
-   //bg-[#00000030] backdrop-brightness-75
+
    return (
       <dialog
          ref={modalRef}
-         // onClose={handleClose}
          className='select-none text-center w-96 py-10 rounded-lg shadow-2xl
           bg-[#703ACFA0] backdrop-brightness-75
          font-mono'>
