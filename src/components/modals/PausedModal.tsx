@@ -26,7 +26,7 @@ export const PausedModal: FC<Props> = ({ onNewGame, onResume, modalRef }) => {
       <dialog
          ref={modalRef}
          onClose={onResume}
-         className='my-48 xl:my-auto select-none text-center w-96 py-10 rounded-md 
+         className='my-48 xl:my-72 2xl:my-auto select-none text-center w-96 py-10 rounded-md 
          shadow-lg bg-[#703ACFA0] backdrop-brightness-75'>
 
          <div className='space-y-10 font-mono'>

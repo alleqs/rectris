@@ -49,8 +49,10 @@ export const GameBoard: FC<Props> = ({ onKeyPress, fastKeys }) => {
       <section className='
       w-[calc(var(--hd-board-width)+2*var(--x-board-margin))]
       h-[calc(var(--hd-board-height)+2*var(--y-board-margin))]
-      xl:w-[calc(var(--board-width)+2*var(--x-board-margin))] 
-      xl:h-[calc(var(--board-height)+2*var(--y-board-margin)] 
+      xl:w-[calc(var(--wx-board-width)+2*var(--x-board-margin))] 
+      xl:h-[calc(var(--wx-board-height)+2*var(--y-board-margin)] 
+      2xl:w-[calc(var(--board-width)+2*var(--x-board-margin))] 
+      2xl:h-[calc(var(--board-height)+2*var(--y-board-margin)] 
       mx-6'>
          {/* <section className='w-[272px] h-[600px] xl:w-[432px] xl:h-[920px] extra mx-6'> */}
          {/* <section style={{ width: width + 2 * 16, height: height + 2 * 60 }} className='extra mx-6'> */}

@@ -36,7 +36,8 @@ export const LeftPanel: FC = () => {
             <h2 className='text-2xl xl:text-3xl text-center text-gray-500 font-retroGame'>Hold</h2>
             {/* <div className='w-[120px] h-[72px] xl:w-[200px] xl:h-[120px]'> */}
             <div className='w-[calc(var(--hd-board-width)/2)] h-[calc(var(--hd-board-width)*0.3)] 
-            xl:w-[calc(var(--board-width)/2)] xl:h-[calc(var(--board-width)*0.3)]'>
+            xl:w-[calc(var(--wx-board-width)/2)] xl:h-[calc(var(--wx-board-width)*0.3)]
+            2xl:w-[calc(var(--board-width)/2)] 2xl:h-[calc(var(--board-width)*0.3)]'>
                <svg viewBox={`0 0 5 3`} className='bg-[#FDF344A0] rounded-lg neumorphism-left'>
                   {snap.heldPiece && posPiecesMap[snap.heldPiece][0].map(([x, y], i) =>
                      <Block key={i} {...getPiecePanelPos(snap.heldPiece!, x, y + 0.5 + 2.5 * 0)} piece={snap.heldPiece!} />)}
@@ -55,8 +56,8 @@ type InfoProps = { title: string, value: number, isNewLevel?: boolean }
 const InfoPanel: FC<InfoProps> = ({ title, value, isNewLevel }) =>
 
    <div className='space-y-2 font-retroGame z-10 relative'>
-      <p className='text-lg xl:text-2xl text-center text-gray-500 '>{title}</p>
-      <p className={`${title === 'Level' && isNewLevel && 'shake-horizontal'} text-xl xl:text-3xl text-center text-gray-700`}>{value.toLocaleString()}</p>
+      <p className='text-lg 2xl:text-2xl text-center text-gray-500 '>{title}</p>
+      <p className={`${title === 'Level' && isNewLevel && 'shake-horizontal'} text-xl 2xl:text-3xl text-center text-gray-700`}>{value.toLocaleString()}</p>
    </div>
 
 

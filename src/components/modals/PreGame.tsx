@@ -23,7 +23,7 @@ export const PreGame: FC<Props> = ({ onStart, modalRef: selfModalRef, helpModalR
    return (
       <dialog
          ref={selfModalRef}
-         className='my-28 xl:my-auto select-none text-center tracking-wider bg-[#703ACFA0] 
+         className='my-28 xl:my-44 2xl:my-auto select-none text-center tracking-wider bg-[#703ACFA0] 
          backdrop-brightness-75 shadow-2xl overflow-hidden rounded-md'>
          <div className='flex flex-col justify-between w-[24rem] h-[15rem] pt-12 space-y-10'>
             <div className='text-5xl logo-name'>

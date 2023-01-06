@@ -56,12 +56,15 @@ export const RightPanel: FC<Props> = ({ onPause, onResume, onNewGame }) => {
 
    return (
       <aside className='flex flex-col items-center select-none w-36 xl:w-auto 
-      h-[calc(var(--hd-board-width)*2+2*var(--y-board-margin))] xl:h-auto'>
+      h-[calc(var(--hd-board-height)+2*var(--y-board-margin))] 
+      xl:h-[calc(var(--wx-board-height)+2*var(--y-board-margin))]
+      2xl:h-auto'>
          <div className='flex-1 space-y-3 '>
             <h2 className="text-2xl xl:text-3xl text-center text-gray-500 font-retroGame">Next</h2>
             {/* <div className='w-[120px] h-[192px] xl:w-[200px] xl:h-[320px]'> */}
             <div className='w-[calc(var(--hd-board-width)/2)] h-[calc(var(--hd-board-width)*0.8)]
-            xl:w-[calc(var(--board-width)/2)] xl:h-[calc(var(--board-width)*0.8)]'>
+            xl:w-[calc(var(--wx-board-width)/2)] xl:h-[calc(var(--wx-board-width)*0.8)]
+            2xl:w-[calc(var(--board-width)/2)] 2xl:h-[calc(var(--board-width)*0.8)]'>
                {/* <svg viewBox={`0 0 5 8`} width={WIDTH * 0.5} height={WIDTH * 0.8} */}
                <svg viewBox={`0 0 5 8`} className='bg-[#FFFF0010] backdrop-blur-md rounded-lg shadow[0_-5px_-5px_10px_#d5cc39] neumorphism-right'>
                   {freezed
@@ -79,14 +82,14 @@ export const RightPanel: FC<Props> = ({ onPause, onResume, onNewGame }) => {
          </div>
 
          <div className='w-full flex justify-end'>
-            {<button
+            <button
                onClick={handlePauseBtnClick}
                onKeyDown={handleKeyDown}
-               className='flex justify-center px-4 py-3 xl:px-8 xl:py-7
+               className='flex justify-center px-4 py-3 xl:px6 xl:py-4 2xl:px-8 2xl:py-7
                bg-[#581c87B0] hover:bg-[#1f2937D0] font-bold 
                border border-gray-400 rounded-lg shadow transition ease-in'>
                <PauseSymbol />
-            </button>}
+            </button>
          </div>
 
          {/* modal */}

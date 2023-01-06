@@ -8,11 +8,15 @@ export const HIDDEN_ROWS = 3;
 //DIMENSIONS
 export const HD_WIDTH = 240;
 export const HD_HEIGHT = HD_WIDTH * ROWS_AMT / COLS_AMT;
+export const WX_WIDTH = 320;
+export const WX_HEIGHT = WX_WIDTH * ROWS_AMT / COLS_AMT;
 export const WIDTH = 400;
 export const HEIGHT = WIDTH * ROWS_AMT / COLS_AMT;
 export const boardDimensionsMap = {
    '--hd-board-width': `${HD_WIDTH}px`,
    '--hd-board-height': `${HD_HEIGHT}px`,
+   '--wx-board-width': `${WX_WIDTH}px`,
+   '--wx-board-height': `${WX_HEIGHT}px`,
    '--board-width': `${WIDTH}px`,
    '--board-height': `${HEIGHT}px`,
    '--x-board-margin': '16px',
@@ -24,7 +28,7 @@ export const VISIBLE_PIECES_AMT = 3;
 export const PIECE_TYPES_AMT = pieces.length;
 //KEYBOARD
 export const REP_INTERVAL = 40;
-export const DALAY_KEYBOARD = 120;
+export const DALAY_KEYBOARD = 140;
 //GAME
 export const INIT_TICK_INTERVAL = 500;
 export const LINES_TO_INC_LEVEL = 10;
