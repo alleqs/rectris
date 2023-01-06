@@ -2,7 +2,7 @@ import { useEffect, useRef, type FC } from 'react';
 import { KeyStroke } from './types';
 import { LeftPanel } from './components/LeftPanel';
 import { RightPanel, type Props as RightPanelProps } from './components/RightPanel';
-import { Game } from './components/Game';
+import { GameBoard } from './components/GameBoard';
 import { GameOverModal } from './components/modals/GameOverModal';
 import { state as gameState } from './models/gameStatus';
 import { subscribeKey } from 'valtio/utils';
@@ -10,7 +10,7 @@ import { Alert } from './components/Alert';
 import { NewHiScoreModal } from './components/modals/NewHiScoreModal';
 import { PreGame } from './components/modals/PreGame';
 import { HelpModal } from './components/modals/HelpModal';
-import { BG_IMAGE } from './constants';
+import { BG_IMAGE, boardDimensionsMap } from './constants';
 
 type Props = {
   onStart: () => void
@@ -21,13 +21,13 @@ type Props = {
   onRankingReset: () => void
 } & RightPanelProps
 
+
 export const App: FC<Props> = ({ onStart, onKeyPress, fastKeys, onNewGame, onNewHiScore, onRankingReset, ...rightPanelProps }) => {
 
   const gameOverModalRef = useRef<HTMLDialogElement>(null);
   const newHiScoreModalRef = useRef<HTMLDialogElement>(null);
   const startModalRef = useRef<HTMLDialogElement>(null);
   const helpModalRef = useRef<HTMLDialogElement>(null);
-
 
   useEffect(() => {
     const unsubscribe = subscribeKey(gameState, 'status', status => {
@@ -42,20 +42,20 @@ export const App: FC<Props> = ({ onStart, onKeyPress, fastKeys, onNewGame, onNew
     return () => { unsubscribe() };
   }, []);
 
+
   function handleHelpModalClose() {
     helpModalRef.current?.close();
     startModalRef.current?.showModal();
   }
 
   return (
-    <main style={{ backgroundImage: BG_IMAGE }}
-      className={`flex justify-center py-10 h-screen bg-[#FDF344] relative`}>
+    <main style={{ backgroundImage: BG_IMAGE, ...boardDimensionsMap }}
+      className={`flex justify-center py-5 xl:py-10 h-screen bg-[#FDF344] 
+      overflow-hidden relative`}>
 
       <LeftPanel />
 
-      <section className='mx-6 smartphone'>
-        <Game onKeyPress={onKeyPress} fastKeys={fastKeys} />
-      </section>
+      <GameBoard onKeyPress={onKeyPress} fastKeys={fastKeys} />
 
       <RightPanel {...rightPanelProps} onNewGame={onNewGame} />
 
@@ -82,9 +82,7 @@ export const App: FC<Props> = ({ onStart, onKeyPress, fastKeys, onNewGame, onNew
         modalRef={helpModalRef}
       />
 
-      <div className='absolute left-auto top-2/3'>
-        <Alert />
-      </div>
+      <Alert />
 
     </main>
   );

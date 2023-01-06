@@ -5,9 +5,19 @@ export const COLS_AMT = 10;
 export const ROWS_AMT = 20;
 export const MAX_ROWS = 22;
 export const HIDDEN_ROWS = 3;
-//DOMENSIONS
+//DIMENSIONS
+export const HD_WIDTH = 240;
+export const HD_HEIGHT = HD_WIDTH * ROWS_AMT / COLS_AMT;
 export const WIDTH = 400;
 export const HEIGHT = WIDTH * ROWS_AMT / COLS_AMT;
+export const boardDimensionsMap = {
+   '--hd-board-width': `${HD_WIDTH}px`,
+   '--hd-board-height': `${HD_HEIGHT}px`,
+   '--board-width': `${WIDTH}px`,
+   '--board-height': `${HEIGHT}px`,
+   '--x-board-margin': '16px',
+   '--y-board-margin': '60px',
+};
 //PIECES
 export const FRAMES_AMT = 4;
 export const VISIBLE_PIECES_AMT = 3;
@@ -23,29 +33,34 @@ export const SHAKE_ANIM_DURATION = 1000;
 
 // From https://similarpng.com/colorful-3d-cubes-flow-png/#getdownload
 // As the site says: "Personal use only"
-export const BG_IMAGE = "url('src/assets/cubes.png')";
+export const BG_IMAGE = "url('./cubes.png')";
 
 //COLORS
 export const GRID_COLOR = '#7743CE20';
 export const fillColorMap: Record<Piece, string> = {
    I: 'cyan',
-   J: '#79A9F5', //0000A3   royalblue  
-   L: '#E73BA5', //goldenrod f736f9
+   J: '#79A9F5',
+   L: '#E73BA5',
    S: 'springgreen',
-   T: 'darkorchid',//
-   Z: '#B1B1B1',  //red FF0F39  
-   O: '#333A44', //gold   D6AD60
+   T: 'darkorchid',
+   Z: '#B1B1B1',
+   O: '#333A44',
 };
 
 export const darkColorMap: Record<Piece, string> = {
-   I: 'hsl(180, 100%, 40%',
-   J: '#4B7BF5', //  hsl(225, 72.7%, 45.5%)
-   L: '#A91D92',// 
+   I: 'hsl(180, 100%, 40%)',
+   J: '#4B7BF5',
+   L: '#A91D92',
    S: 'hsl(149.9, 100%, 40%)',
    T: 'hsl(280.1, 60.6%, 39.8%)',
-   Z: '#747474',  // hsl(0, 100%, 40%) BA0F30
-   O: '#050833',   //B68D40
+   Z: '#747474',
+   O: '#050833',
 };
+
+export const brushBtnColorMap: Record<string, string> = {
+   '--btn-color': '#e11d48',
+   '--btn-hover-color': '#9f1239',
+}
 
 //MISCELLANEOUS
 export const posPiecesMap: Record<Piece, Record<number, [number, number][]>> = {

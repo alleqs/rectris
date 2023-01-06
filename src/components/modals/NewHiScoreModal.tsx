@@ -25,16 +25,17 @@ export const NewHiScoreModal: FC<Props> = ({ modalRef, onNewHiScore }) => {
    return (
       <dialog
          ref={modalRef}
-         className='select-none text-center w-96 py-10 rounded-lg shadow-2xl
+         className='my-28 xl:my-auto select-none text-center w-96 py-10 rounded-lg shadow-2xl
           bg-[#703ACFA0] backdrop-brightness-75
          font-mono'>
          <div className='space-y-6 px-10 '>
-            <div>
+            <div className='space-y-4'>
                <div className='space-y-2 text-3xl text-white'>
-                  <p>New High Score!</p>
+                  <p className='text-gray-300'>New High Score!</p>
+                  <p>🎉</p>
                   <p className=' tracking-wider '>{score.toLocaleString()}</p>
                </div>
-               <p className='text-2xl text-gray-200'>Enter your initials:</p>
+               <p className='text-2xl text-gray-300'>Enter your initials:</p>
             </div>
             <div className='inline-block text-2xl font-bold'>
                <input onChange={handleChange} size={1} value={name} spellCheck={false}

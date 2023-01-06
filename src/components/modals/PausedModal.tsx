@@ -1,4 +1,5 @@
 import React, { type FC } from 'react';
+import { brushBtnColorMap } from '../../constants';
 import { BrushStroke } from '../Icons';
 
 type Props = {
@@ -25,7 +26,8 @@ export const PausedModal: FC<Props> = ({ onNewGame, onResume, modalRef }) => {
       <dialog
          ref={modalRef}
          onClose={onResume}
-         className='select-none text-center w-96 py-10 rounded-md shadow-lg bg-[#703ACFA0] backdrop-brightness-75'>
+         className='my-48 xl:my-auto select-none text-center w-96 py-10 rounded-md 
+         shadow-lg bg-[#703ACFA0] backdrop-brightness-75'>
 
          <div className='space-y-10 font-mono'>
 
@@ -36,8 +38,8 @@ export const PausedModal: FC<Props> = ({ onNewGame, onResume, modalRef }) => {
                <button onClick={handleNewGame} className="text-2xl text-gray-200 hover:scale-110 w-full rounded-md transition ease-in">
                   ↻ New game
                </button>
-               <button onClick={handleResume} className="w-full rounded-md relative">
-                  <BrushStroke color='#e11d48' hoverColor='#9f1239' height={44} />
+               <button onClick={handleResume} style={brushBtnColorMap} className="w-full rounded-md relative">
+                  <BrushStroke height={44} />
                   <span className='absolute top-2 right-7 text-2xl text-gray-200 font-semibold pointer-events-none'>▶ Resume</span>
                </button>
             </div>
@@ -45,5 +47,7 @@ export const PausedModal: FC<Props> = ({ onNewGame, onResume, modalRef }) => {
       </dialog>
    );
 };
+
+
 
 

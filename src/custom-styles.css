@@ -1,8 +1,3 @@
-:root {
-   --btn-color: #22c55e;
-   --btn-hover-color: #16a34a;
-}
-
 button:focus {
    outline: 0 !important;
 }
@@ -26,13 +21,12 @@ dialog::backdrop {
 /* The device with borders */
 .smartphone {
    position: relative;
-   width: 432px;
-   height: 920px;
    border: 16px #703ACF solid;
    border-top-width: 60px;
    border-bottom-width: 60px;
    border-radius: 36px;
 }
+
 
 /* The horizontal line on the top of the device */
 .smartphone:before {

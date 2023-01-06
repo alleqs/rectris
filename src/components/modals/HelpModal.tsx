@@ -1,4 +1,5 @@
 import React, { type FC } from 'react';
+import { brushBtnColorMap } from '../../constants';
 import { BrushStroke } from '../Icons';
 
 type Props = {
@@ -6,6 +7,7 @@ type Props = {
    onClose: () => void
 }
 
+// border radius tested using https://9elements.github.io/fancy-border-radius
 const borderRadius = { borderRadius: '27% 73% 25% 75% / 72% 26% 74% 28% ' };
 
 export const HelpModal: FC<Props> = ({ onClose, modalRef }) => {
@@ -13,7 +15,8 @@ export const HelpModal: FC<Props> = ({ onClose, modalRef }) => {
       <dialog
          ref={modalRef}
          style={borderRadius}
-         className='font-mono select-none text-center w-[28rem] h-[40rem] pt-16 shadow-2xl bg-[#703ACFA0] backdrop-brightness-75 overflow-hidden'>
+         className='font-mono select-none text-center w-[28rem] h-[40rem]
+          pt-16 shadow-2xl bg-[#703ACFA0] backdrop-brightness-75 overflow-hidden'>
 
          <div className='px-10 '>
             <p className='text-3xl text-white font-semibold uppercase'>Help</p>
@@ -61,13 +64,8 @@ export const HelpModal: FC<Props> = ({ onClose, modalRef }) => {
                </tbody>
             </table>
 
-            {/* <button onClick={onClose} className="mt-8 bg-teal-500 hover:bg-teal-700 py-2 w-full rounded-lg">
-               <div className='flex justify-center items-center space-x-3'>
-                  <span className='text-xl text-white font-semibold uppercase'>Ok</span>
-               </div>
-            </button> */}
-            <button onClick={onClose} className="pt-10 w-full rounded-md relative">
-               <BrushStroke color='#e11d48' hoverColor='#9f1239' height={60} />
+            <button onClick={onClose} style={brushBtnColorMap} className="pt-10 w-full rounded-md relative">
+               <BrushStroke height={60} />
                <span className='absolute top-14 left-40 text-2xl text-gray-200 font-semibold
                 uppercase pointer-events-none'>Ok</span>
             </button>

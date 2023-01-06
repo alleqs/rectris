@@ -21,7 +21,8 @@ export const GameOverModal: FC<Props> = ({ onStart, modalRef, onRankingReset }) 
    return (
       <dialog
          ref={modalRef}
-         className='select-none uppercase font-mono text-center w-96 py-10 rounded-lg shadow-2xl bg-[#703ACFA0] backdrop-brightness-75 '>
+         className='my-28 xl:my-auto select-none uppercase font-mono text-center 
+         w-96 py-10 rounded-lg shadow-2xl bg-[#703ACFA0] backdrop-brightness-75 '>
 
          <div className='space-y-10 '>
             <p className='text-3xl text-white font-semibold '>Game Over</p>

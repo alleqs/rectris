@@ -24,17 +24,17 @@ export const Alert: FC = () => {
    }, []);
 
    return (
-      <>
+      <div className='absolute left-auto top-2/3'>
          {key > 0 && <motion.div key={key} initial="hidden" animate="visible" variants={variants} transition={{ duration: 3 }}
-            className='text-center text-lg font-semibold font-sans text-fuchsia-900 opacity-70 space-y-2 uppercase'>
+            className='text-center text-sm xl:text-lg font-semibold font-sans text-fuchsia-900 opacity-70 space-y-10 uppercase'>
             <motion.p variants={variantsItem} transition={transition}>
                {clearMap[clearedRows.current] ?? ''}
             </motion.p>
-            <motion.p className='text-xl' variants={variantsItem} transition={transition}>
+            <motion.p className='text-base xl:text-xl' variants={variantsItem} transition={transition}>
                {consecutiveDrops > 0 && `COMBO ${consecutiveDrops > 1 ? consecutiveDrops : ''}`}
             </motion.p>
          </motion.div>}
-      </>
+      </div>
    );
 };
 
@@ -52,12 +52,12 @@ const variantsItem = {
    hidden: {
       y: 0,
       scale: 1,
-      opacity: 0.1,
+      opacity: 0,
    },
    visible: {
       y: [0, -70, -70],
       scale: [1, 1.5, 1.5],
-      opacity: [0.1, 1, 0],
+      opacity: [0, 1, 0],
    }
 };
 
