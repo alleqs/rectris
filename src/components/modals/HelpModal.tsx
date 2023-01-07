@@ -9,7 +9,7 @@ type Props = {
 
 // border radius tested using https://9elements.github.io/fancy-border-radius
 const borderRadius = { borderRadius: '27% 73% 25% 75% / 72% 26% 74% 28% ' };
-
+//⭠ ⭢ ⭡ ⭣
 export const HelpModal: FC<Props> = ({ onClose, modalRef }) => {
    return (
       <dialog
@@ -24,19 +24,19 @@ export const HelpModal: FC<Props> = ({ onClose, modalRef }) => {
             <table className="min-w-full">
                <tbody>
                   <tr className="border-b">
-                     <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-gray-100">🡐</td>
+                     <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-gray-100">⭠</td>
                      <td className="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap">
                         Move left
                      </td>
                   </tr>
                   <tr className="border-b">
-                     <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-gray-100"> 🡒 </td>
+                     <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-gray-100"> ⭢ </td>
                      <td className="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap">
                         Move right
                      </td>
                   </tr>
                   <tr className="border-b">
-                     <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-gray-100"> 🡑 </td>
+                     <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-gray-100"> ⭡ </td>
                      <td className="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap">
                         Rotate right
                      </td>
@@ -48,7 +48,7 @@ export const HelpModal: FC<Props> = ({ onClose, modalRef }) => {
                      </td>
                   </tr>
                   <tr className="border-b">
-                     <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-gray-100"> 🡓 </td>
+                     <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-gray-100"> ⭣ </td>
                      <td className="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap">
                         Soft drop
                      </td>

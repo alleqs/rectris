@@ -58,7 +58,7 @@ export const RightPanel: FC<Props> = ({ onPause, onResume, onNewGame }) => {
       <aside className='flex flex-col items-center select-none w-36 xl:w-auto 
       h-[calc(var(--hd-board-height)+2*var(--y-board-margin))] 
       xl:h-[calc(var(--wx-board-height)+2*var(--y-board-margin))]
-      2xl:h-auto'>
+      2xl:h-[calc(var(--board-height)+2*var(--y-board-margin))]'>
          <div className='flex-1 space-y-3 '>
             <h2 className="text-2xl xl:text-3xl text-center text-gray-500 font-retroGame">Next</h2>
             {/* <div className='w-[120px] h-[192px] xl:w-[200px] xl:h-[320px]'> */}
