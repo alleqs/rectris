@@ -3,7 +3,7 @@
    <img src="src/assets/rectris.svg" width="15%">
 </div>
 
-Play the Demo [here](https://rectris.netlify.app)
+Play Demo [here](https://rectris.netlify.app)
 
 ## The Stack
 #### This react.js game was coded using the following stack:
